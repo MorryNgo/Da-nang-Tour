@@ -109,3 +109,56 @@ body {
 @keyframes fadeIn {
     to { opacity: 1; }
 }
+
+/* Giữ nguyên phần body, header, nav và boxinfo cũ của bạn */
+
+/* Tinh chỉnh phần nội dung chi tiết */
+.more-details {
+    display: none;
+    margin-top: 25px;
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto; /* Thêm thanh cuộn nếu nội dung quá dài */
+    padding-right: 10px;
+}
+
+.more-details section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.more-details h3 {
+    color: #e67e22;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.more-details ul {
+    padding-left: 20px;
+}
+
+.more-details p, .more-details li {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Hiệu ứng khi mở rộng */
+.boxinfo.expanded {
+    animation: moinfo 0.6s forwards;
+    width: 700px; /* Mở rộng chiều rộng hơn để chứa text */
+}
+
+.boxinfo.expanded .more-details {
+    display: block;
+}
+
+/* Thanh cuộn đẹp hơn */
+.more-details::-webkit-scrollbar {
+    width: 6px;
+}
+.more-details::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}

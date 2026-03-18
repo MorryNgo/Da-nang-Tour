@@ -4,32 +4,61 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khám Phá Đà Nẵng</title>
+    <title>Cẩm Nang Du Lịch Đà Nẵng</title>
 </head>
 <body>
     <div class="header">
         <ul class="nav">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Địa điểm</a></li>
-            <li><a href="#">Ẩm thực</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#overview">Tổng quan</a></li>
+            <li><a href="#places">Địa điểm</a></li>
+            <li><a href="#food">Ẩm thực</a></li>
+            <li><a href="#itinerary">Lịch trình</a></li>
         </ul>
     </div>
 
-   <div class="boxinfo">
-    <div class="content">
-        <h1 class="text" id="heading">Thành phố Đà Nẵng</h1>
-        <p class="description">Đà Nẵng là thành phố đáng sống nhất Việt Nam...</p>
-        
-        <div class="more-details">
-            <hr>
-            <p>📍 <b>Địa danh:</b> Ngũ Hành Sơn, Bà Nà Hills, Cầu Rồng.</p>
-            <p>🍲 <b>Ẩm thực:</b> Mì Quảng, Bánh tráng cuốn thịt heo, Chè Liên.</p>
-        </div>
+    <div class="boxinfo">
+        <div class="content">
+            <h1 class="text" id="heading">Thành phố Đà Nẵng</h1>
+            <p class="description">
+                Đà Nẵng là thành phố lớn nhất miền Trung, nổi bật với bãi biển dài, 
+                nhiều cây cầu độc đáo và ẩm thực phong phú.
+            </p>
+            
+            <div class="more-details">
+                <section id="overview">
+                    <h3>🌟 Tổng quan</h3>
+                    <p>Thời điểm đẹp nhất: Tháng 3 – Tháng 8 (nắng đẹp, biển xanh).</p>
+                    <p>Phương tiện: Có thể đi máy bay, tàu hỏa hoặc xe khách.</p>
+                </section>
 
-        <button class="btn-more">Khám phá ngay</button>
+                <section id="places">
+                    <h3>📍 Địa điểm nổi bật</h3>
+                    <ul>
+                        <li>Bà Nà Hills & Cầu Vàng </li>
+                        <li>Bãi biển Mỹ Khê (Top thế giới) </li>
+                        <li>Bán đảo Sơn Trà & Chùa Linh Ứng </li>
+                        <li>Ngũ Hành Sơn & Cầu Rồng </li>
+                    </ul>
+                </section>
+
+                <section id="food">
+                    <h3>🍲 Đặc sản phải thử</h3>
+                    <p>Mì Quảng, Bún chả cá, Bánh tráng cuốn thịt heo, Bánh xèo.</p>
+                    <p>Quà mua về: Chả bò, Mực rim me, Nước mắm Nam Ô.</p>
+                </section>
+
+                <section id="itinerary">
+                    <h3>📅 Lịch trình 3 ngày gợi ý</h3>
+                    <p><b>Ngày 1:</b> Mỹ Khê - Ngũ Hành Sơn - Cầu Rồng.</p>
+                    <p><b>Ngày 2:</b> Bà Nà Hills - Fantasy Park.</p>
+                    <p><b>Ngày 3:</b> Chùa Linh Ứng - Hội An.</p>
+                </section>
+            </div>
+
+            <button class="btn-more">Xem chi tiết cẩm nang</button>
+        </div>
     </div>
-</div>
+
+    <script src="app.js"></script>
 </body>
-<script src="app.js"></script>
 </html>
