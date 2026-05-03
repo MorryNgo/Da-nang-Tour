@@ -1,164 +1,100 @@
-body {
-    background-image: url("https://cdn-media.sforum.vn/storage/app/media/ctvseo_MH/%E1%BA%A3nh%20%C4%91%E1%BA%B9p%20%C4%91%C3%A0%20n%E1%BA%B5ng/anh-dep-da-nang-5.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
+:root {
+    --primary: #e67e22;
+    --dark: #2c3e50;
+    --white: rgba(255, 255, 255, 0.95);
 }
 
-/* Header & Menu */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #333;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background-image 1.2s ease-in-out;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    z-index: -1;
+}
+
 .header {
     margin: 20px auto;
     width: 90%;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 30px;
+    height: 70px;
+    background: var(--white);
+    border-radius: 50px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 0 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 20px; z-index: 100;
 }
 
-.nav {
-    list-style: none;
-    display: flex;
-    margin: 0 auto;
-    padding: 0;
-}
+.logo { font-size: 24px; font-weight: 800; color: var(--dark); }
+.logo span { color: var(--primary); }
 
-.nav li { margin: 0 20px; }
+.nav { list-style: none; display: flex; gap: 25px; }
+.nav a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.3s; }
+.nav a:hover { color: var(--primary); }
 
-.nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.nav a:hover { color: #007bff; }
-
-/* Box Thông Tin */
 .boxinfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.85); /* Hiệu ứng hơi trong suốt */
-    backdrop-filter: blur(5px); /* Làm mờ nền sau box */
-    margin: 0 auto;
-    position: absolute; 
-    top: 55%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    background: var(--white);
+    margin: 100px auto;
+    padding: 50px;
+    border-radius: 30px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    transition: 0.5s all ease;
 }
 
-.text {
-    font-size: 35px;
-    color: #2c3e50;
-    margin-bottom: 15px;
-}
-
-.description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
-}
-
-.btn-more {
-    margin-top: 20px;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 25px;
-    background: #e67e22;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.btn-more:hover {
-    transform: scale(1.05);
-    background: #d35400;
-}
-
-/* Class này sẽ được JS thêm vào khi click */
 .boxinfo.expanded {
-    animation: moinfo 0.8s forwards; /* Chạy animation moinfo trong 0.8s và giữ lại trạng thái cuối */
-    align-items: flex-start; /* Đẩy nội dung lên trên để có chỗ cho tin mới */
-    overflow: hidden; /* Tránh nội dung tràn ra ngoài khi đang mở rộng */
+    max-width: 800px;
+    margin-top: 50px;
+    margin-bottom: 0;
 }
 
-/* Ẩn bớt nội dung chi tiết ban đầu */
-.more-details {
-    display: none; 
-    margin-top: 20px;
-    text-align: left;
-    opacity: 0;
-}
+.text { font-size: 42px; color: var(--dark); margin-bottom: 10px; }
+.description { font-size: 18px; color: #666; line-height: 1.8; }
 
-/* Hiện nội dung chi tiết khi box mở rộng */
-.boxinfo.expanded .more-details {
-    display: block;
-    animation: fadeIn 1s forwards 0.5s; /* Hiện dần lên sau khi box mở rộng xong */
-}
-
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-/* Giữ nguyên phần body, header, nav và boxinfo cũ của bạn */
-
-/* Tinh chỉnh phần nội dung chi tiết */
+/* Nội dung chi tiết */
 .more-details {
     display: none;
-    margin-top: 25px;
+    margin-top: 30px;
     text-align: left;
-    max-height: 400px;
-    overflow-y: auto; /* Thêm thanh cuộn nếu nội dung quá dài */
-    padding-right: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 15px;
 }
 
-.more-details section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+.more-details section { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+.more-details h3 { color: var(--primary); margin-bottom: 10px; }
+.place-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-weight: 500; }
+.price-tag { background: #fdf2e9; padding: 10px; border-radius: 10px; color: var(--primary); font-weight: bold; }
+
+.btn-more {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
 }
 
-.more-details h3 {
-    color: #e67e22;
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.more-details ul {
-    padding-left: 20px;
-}
-
-.more-details p, .more-details li {
-    font-size: 15px;
-    color: #444;
-    line-height: 1.5;
-}
-
-/* Hiệu ứng khi mở rộng */
-.boxinfo.expanded {
-    animation: moinfo 0.6s forwards;
-    width: 700px; /* Mở rộng chiều rộng hơn để chứa text */
-}
-
-.boxinfo.expanded .more-details {
-    display: block;
-}
-
-/* Thanh cuộn đẹp hơn */
-.more-details::-webkit-scrollbar {
-    width: 6px;
-}
-.more-details::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .header { width: 95%; padding: 0 15px; }
+    .nav { display: none; } /* Ẩn menu trên mobile để tinh gọn */
+    .text { font-size: 30px; }
+    .boxinfo { padding: 30px; }
 }
